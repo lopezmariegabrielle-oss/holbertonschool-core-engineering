@@ -5,4 +5,7 @@ def uppercase(str):
             print("{}".format(chr(ord(c) - 32)), end="")
         else:
             print("{}".format(c), end="")
-    print("")
+
+
+if __name__ == "__main__":
+    uppercase("Holberton")
