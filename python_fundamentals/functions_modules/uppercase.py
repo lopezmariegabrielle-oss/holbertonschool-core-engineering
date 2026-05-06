@@ -6,7 +6,3 @@ def uppercase(str):
         else:
             print("{}".format(c), end="")
     print("")
-
-
-if __name__ == "__main__":
-    uppercase("Holberton")
