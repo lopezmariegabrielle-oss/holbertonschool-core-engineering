@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 def uppercase(str):
     for c in str:
-        var = ord(c)
+        var = ord(char)
         if var >= 97 and var <= 122:
             char = chr(var - 32)
 
