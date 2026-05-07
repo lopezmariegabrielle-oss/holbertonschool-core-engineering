@@ -6,5 +6,5 @@ def uppercase(str):
         if var >= 97 and var <= 122:
             char = chr(var - 32)
 
-            print("{}".format(char), end="")
+        print("{}".format(char), end="")
     print("")
