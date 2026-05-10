@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-common_elements = __import__('common_elements').common_elements
+update_dictionary = __import__('update_dictionary').update_dictionary
 
-set_1 = {"Python", "C", "Javascript"}
-set_2 = {"Bash", "C", "Ruby", "Perl"}
-print(sorted(list(common_elements(set_1, set_2))))
+d = {'language': 'C', 'number': 89, 'track': 'Low level'}
+print(update_dictionary(d, 'language', 'Python'))
+print(update_dictionary(d, 'city', 'San Francisco'))
