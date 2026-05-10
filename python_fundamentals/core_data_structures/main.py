@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-update_dictionary = __import__('update_dictionary').update_dictionary
+best_score = __import__('best_score').best_score
 
-d = {'language': 'C', 'number': 89, 'track': 'Low level'}
-print(update_dictionary(d, 'language', 'Python'))
-print(update_dictionary(d, 'city', 'San Francisco'))
+scores = {'John': 12, 'Bob': 14, 'Mike': 15, 'Molly': 16, 'Adam': 10}
+print(best_score(scores))
+print(best_score(None))
