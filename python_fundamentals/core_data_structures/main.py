@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-print_matrix_integer = __import__('print_matrix_integer').print_matrix_integer
+add_tuple = __import__('add_tuple').add_tuple
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-print_matrix_integer(matrix)
+print(add_tuple((1, 89), (88, 11)))
+print(add_tuple((1, 89), (1, )))
+print(add_tuple((1, 89), ()))
+print(add_tuple((), ()))
