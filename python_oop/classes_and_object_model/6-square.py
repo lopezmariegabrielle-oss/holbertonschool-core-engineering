@@ -6,23 +6,18 @@ class Square:
     """Defines a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes the square.
-
-        Args:
-            size (int): The size of the square.
-            position (tuple): The position of the square.
-        """
+        """Initializes the square."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Gets the size."""
+        """Getter for size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets the size with validation."""
+        """Setter for size."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -31,19 +26,12 @@ class Square:
 
     @property
     def position(self):
-        """Gets the position."""
+        """Getter for position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets the position with strict validation.
-
-        Args:
-            value (tuple): tuple of 2 positive integers.
-
-        Raises:
-            TypeError: if not a tuple of 2 positive integers.
-        """
+        """Setter for position."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -51,11 +39,11 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Returns the area."""
+        """Returns area."""
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square with # and spaces."""
+        """Prints the square."""
         if self.__size == 0:
             print("")
             return
@@ -66,7 +54,7 @@ class Square:
             print(" " * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
-        """String representation of the square for print()."""
+        """String representation."""
         res = ""
         if self.__size == 0:
             return res
