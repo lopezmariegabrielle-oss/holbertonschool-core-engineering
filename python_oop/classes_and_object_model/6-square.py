@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Module for Square."""
+"""Module for Square class."""
 
 
 class Square:
     """Defines a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Init square."""
+        """Initialize square."""
         self.size = size
         self.position = position
 
@@ -39,25 +39,27 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Area."""
+        """Calculate area."""
         return self.__size ** 2
 
     def my_print(self):
-        """Print square."""
+        """Print square with #."""
         if self.__size == 0:
             print("")
             return
-        [print("") for _ in range(self.__position[1])]
+
+        for _ in range(self.__position[1]):
+            print("")
         for _ in range(self.__size):
-            print("{}{}".format(" " * self.__position[0], "#" * self.__size))
+            print(" " * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
-        """String rep."""
+        """String representation for print()."""
         if self.__size == 0:
             return ""
-        res = "\n" * self.__position[1]
+        
+        res = ["\n" * self.__position[1]]
         for i in range(self.__size):
-            res += " " * self.__position[0] + "#" * self.__size
-            if i < self.__size - 1:
-                res += "\n"
-        return res
+            res.append(" " * self.__position[0] + "#" * self.__size)
+        
+        return "".join(res).replace("\n ", "\n" + " " * self.__position[0]) if self.__position[1] > 0 else "\n".join(res[1:])
