@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Module for Square class."""
+"""Module for Square."""
 
 
 class Square:
     """Defines a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes the square."""
+        """Init square."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Getter for size."""
+        """Get size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter for size."""
+        """Set size."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -26,12 +26,12 @@ class Square:
 
     @property
     def position(self):
-        """Getter for position."""
+        """Get position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Setter for position."""
+        """Set position."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -39,28 +39,23 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Returns area."""
+        """Area."""
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square."""
+        """Print square."""
         if self.__size == 0:
             print("")
             return
-
-        for _ in range(self.__position[1]):
-            print("")
+        [print("") for _ in range(self.__position[1])]
         for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+            print("{}{}".format(" " * self.__position[0], "#" * self.__size))
 
     def __str__(self):
-        """String representation."""
-        res = ""
+        """String rep."""
         if self.__size == 0:
-            return res
-
-        for _ in range(self.__position[1]):
-            res += "\n"
+            return ""
+        res = "\n" * self.__position[1]
         for i in range(self.__size):
             res += " " * self.__position[0] + "#" * self.__size
             if i < self.__size - 1:
