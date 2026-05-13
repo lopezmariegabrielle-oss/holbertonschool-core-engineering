@@ -1,33 +1,26 @@
 #!/usr/bin/env python3
-"""Module définissant la classe BaseGeometry."""
+"""Module pour la classe BaseGeometry."""
 
 
 class BaseGeometry:
     """Classe de base pour les formes géométriques."""
 
     def area(self):
-        """
-        Calcule l'aire de la forme.
-
-        Raises:
-            Exception: Toujours, car cette méthode n'est pas implémentée
-            dans la classe de base.
-        """
+        """Lève une exception car l'aire n'est pas implémentée ici."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        Valide qu'une valeur est un entier strictement positif.
+        """Valide que 'value' est un entier strictement positif.
 
         Args:
-            name (str): Le nom de la variable (utilisé dans les erreurs).
-            value (any): La valeur à valider.
+            name (str): Le nom de la variable.
+            value (int): La valeur à vérifier.
 
         Raises:
-            TypeError: Si value n'est pas un entier.
-            ValueError: Si value est inférieure ou égale à 0.
+            TypeError: Si la valeur n'est pas un entier.
+            ValueError: Si la valeur est <= 0.
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be greter than 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
