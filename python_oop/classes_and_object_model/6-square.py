@@ -57,9 +57,12 @@ class Square:
         """String representation for print()."""
         if self.__size == 0:
             return ""
-        
-        res = ["\n" * self.__position[1]]
-        for i in range(self.__size):
+
+        res = []
+        for _ in range(self.__position[1]):
+            res.append("")
+
+        for _ in range(self.__size):
             res.append(" " * self.__position[0] + "#" * self.__size)
-        
-        return "".join(res).replace("\n ", "\n" + " " * self.__position[0]) if self.__position[1] > 0 else "\n".join(res[1:])
+
+        return "\n".join(res)
