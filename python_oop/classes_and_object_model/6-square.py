@@ -31,7 +31,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Set position."""
+        """Set position with strict validation."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -39,11 +39,11 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Calculate area."""
+        """Return area."""
         return self.__size ** 2
 
     def my_print(self):
-        """Print square with #."""
+        """Print square using # and spaces."""
         if self.__size == 0:
             print("")
             return
@@ -54,14 +54,15 @@ class Square:
             print(" " * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
-        """String representation for print()."""
+        """String representation of square for print()."""
         if self.__size == 0:
             return ""
 
         res = []
+        # Lignes vides pour Y
         for _ in range(self.__position[1]):
             res.append("")
-
+        # Lignes du carré pour X
         for _ in range(self.__size):
             res.append(" " * self.__position[0] + "#" * self.__size)
 
