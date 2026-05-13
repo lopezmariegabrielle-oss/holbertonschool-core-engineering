@@ -1,47 +1,37 @@
 #!/usr/bin/env python3
-"""
-Module 5-square
-Définit une classe Square capable de s'imprimer avec des #.
-"""
+"""Module for Square class."""
+
 
 class Square:
-    """
-    Classe Square qui définit un carré et peut l'afficher.
-
-    Attributes:
-        __size (int): La taille d'un côté du carré (privée).
-    """
+    """Defines a square."""
 
     def __init__(self, size=0):
-        """
-        Initialise une nouvelle instance de Square.
+        """Initializes the square.
 
         Args:
-            size (int): La taille du côté du carré.
+            size (int): The size of the square.
         """
         self.size = size
 
     @property
     def size(self):
-        """
-        Récupère la valeur de la taille.
+        """Gets the size of the square.
 
         Returns:
-            int: La taille du carré.
+            int: The size of the square.
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        Définit la valeur de la taille avec validation.
+        """Sets the size of the square.
 
         Args:
-            value (int): La nouvelle taille.
+            value (int): The new size.
 
         Raises:
-            TypeError: Si value n'est pas un entier.
-            ValueError: Si value est inférieur à 0.
+            TypeError: if value is not an integer.
+            ValueError: if value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -50,21 +40,18 @@ class Square:
         self.__size = value
 
     def area(self):
-        """
-        Calcule l'aire du carré.
+        """Calculates the area of the square.
 
         Returns:
-            int: L'aire du carré.
+            int: The area.
         """
-        return self.__size * self.__size
+        return self.__size ** 2
 
     def my_print(self):
-        """
-        Affiche le carré dans la sortie standard en utilisant le caractère #.
-        Si la taille est 0, affiche une ligne vide.
-        """
-        if self.size == 0:
-            print()
-        else:
-            for i in range(self.size):
-                print("#" * self.size)
+        """Prints the square with the # character."""
+        if self.__size == 0:
+            print("")
+            return
+
+        for _ in range(self.__size):
+            print("#" * self.__size)
