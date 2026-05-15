@@ -3,6 +3,7 @@
 from abc import ABC, abstractmethod
 import math
 
+
 class Shape(ABC):
     """Classe de base abstraite pour toutes les formes."""
 
@@ -15,6 +16,7 @@ class Shape(ABC):
     def perimeter(self):
         """Calcule le périmètre de la forme."""
         pass
+
 
 class Circle(Shape):
     """Représente un cercle."""
@@ -31,6 +33,7 @@ class Circle(Shape):
         """Renvoie le périmètre du cercle : 2 * pi * r."""
         return 2 * math.pi * self.radius
 
+
 class Rectangle(Shape):
     """Représente un rectangle."""
 
@@ -46,6 +49,7 @@ class Rectangle(Shape):
     def perimeter(self):
         """Renvoie le périmètre du rectangle : 2 * (L + l)."""
         return 2 * (self.width + self.height)
+
 
 def shape_info(shape):
     """Affiche l'aire et le périmètre d'une forme (Duck Typing)."""
