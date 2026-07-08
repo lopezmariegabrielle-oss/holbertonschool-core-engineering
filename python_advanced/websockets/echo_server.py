@@ -1,17 +1,17 @@
-"""Module pour un serveur WebSocket Echo de base."""
+"""Module for a basic WebSocket Echo server."""
 import asyncio
 import websockets
 
 
 async def echo_handler(websocket):
-    """Gère la connexion d'un client et renvoie ses messages en écho."""
+    """Handle a client connection and echo back received messages."""
     while True:
         message = await websocket.recv()
         await websocket.send(message)
 
 
 async def main():
-    """Démarre le serveur WebSocket sur localhost au port 8765."""
+    """Start the WebSocket server on localhost at port 8765."""
     async with websockets.serve(echo_handler, "localhost", 8765):
         print("Serveur Echo démarré sur ws://localhost:8765")
         await asyncio.Future()
