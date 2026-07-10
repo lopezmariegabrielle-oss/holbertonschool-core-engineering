@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Module for a basic WebSocket Echo server."""
 
 import asyncio
