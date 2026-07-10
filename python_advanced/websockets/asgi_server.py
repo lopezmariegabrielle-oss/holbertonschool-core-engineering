@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Module for an ASGI server handling both HTTP and WebSocket connections."""
 
 

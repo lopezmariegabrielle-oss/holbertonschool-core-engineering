@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Module for a WebSocket broadcast server."""
 
 import asyncio

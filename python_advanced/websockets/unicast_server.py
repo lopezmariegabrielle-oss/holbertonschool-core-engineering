@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Module for a WebSocket unicast server."""
 
 import asyncio
