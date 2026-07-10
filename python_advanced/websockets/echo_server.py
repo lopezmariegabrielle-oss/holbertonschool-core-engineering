@@ -4,7 +4,7 @@ import asyncio
 import websockets
 
 
-async def echo_handler(websocket):
+async def connection_handler(websocket):
     """Receive a connection and echo back any message it receives."""
     while True:
         message = await websocket.recv()
@@ -13,7 +13,7 @@ async def echo_handler(websocket):
 
 async def main():
     """Start the WebSocket server on localhost at port 8765."""
-    async with websockets.serve(echo_handler, "localhost", 8765):
+    async with websockets.serve(connection_handler, "localhost", 8765):
         await asyncio.Future()
 
 
