@@ -8,7 +8,7 @@ import websockets
 connected_clients = set()
 
 
-async def unicast_handler(websocket):
+async def connection_handler(websocket):
     """Handle a single client connection and manage its messages."""
     connected_clients.add(websocket)
     try:
@@ -21,7 +21,7 @@ async def unicast_handler(websocket):
 
 async def main():
     """Start the WebSocket unicast server on localhost at port 8765."""
-    async with websockets.serve(unicast_handler, "localhost", 8765):
+    async with websockets.serve(connection_handler, "localhost", 8765):
         await asyncio.Future()
 
 
