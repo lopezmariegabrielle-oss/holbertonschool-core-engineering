@@ -6,8 +6,7 @@ import websockets
 
 async def connection_handler(websocket):
     """Receive a connection and echo back any message it receives."""
-    while True:
-        message = await websocket.recv()
+    async for message in websocket:
         await websocket.send(message)
 
 
