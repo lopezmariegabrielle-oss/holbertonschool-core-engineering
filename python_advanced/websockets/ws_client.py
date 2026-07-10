@@ -9,11 +9,10 @@ import websockets
 
 async def connect_and_send(uri, message):
     """Connect to the server, send a message, and print the response."""
-    uri = "ws://localhost:8765"
     async with websockets.connect(uri) as websocket:
         await websocket.send(message)
-        réponse = await websocket.recv()
-        return réponse
+        reponse = await websocket.recv()
+        return reponse
 
 
 if __name__ == "__main__":
